@@ -1,0 +1,75 @@
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: $color-mediumgray;
+  padding: 3rem;
+}
+
+.heading-primary {
+  color: white;
+  text-transform: uppercase;   
+  margin-bottom: 7rem;
+
+  backface-visibility: hidden;/*Esto es para evitar que haya problemas de que se muevan elementos al dar click u otros eventos */
+
+  &--main {
+    display: block; /*para hacer que se comporte como bloque*/
+    font-size: 4rem;
+    font-weight: 400;
+    letter-spacing: 1rem;
+  
+    animation-name: moveInLeft;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;/*para determinar a qué ritmo queremos que la animacion se ejecute*/
+    animation-delay: .1s;/*Para determinar lo que queremos que tarde en ejecutarse la animacion*/
+    
+  
+    /*
+      animation-delay: 3s;  
+      animation-iteration-count: 3; para ejecutar varias veces una animacion
+    */
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: .3rem;
+  
+    animation: moveInRight 1.5s ease; /* Para agregar propiedades de una animacion en una sola línea */
+  }
+}
+
+.heading-secondary {
+  text-transform: uppercase;   
+  font-weight: 700;
+  font-size: 3rem;
+  transition: all .2s;  
+  display: inline-block;
+
+  //Estas propiedades son para que el texto tenga este gradient
+  background-image: linear-gradient(
+    to right, 
+    $color-darkgreen, 
+    $color-mediumgreen
+  );
+  -webkit-background-clip: text;//para que se aplique el gradient al texto
+  color: transparent;
+  
+  &:hover {
+    transform: skewY(2deg) skewX(10deg) scale(1.1);//skew es para que rote en un eje que se coloca al centro del elemento
+    text-shadow: .5rem 1rem 2rem $color-black-transparent;
+  }  
+}
+
+.heading-tertiary {
+  text-transform: uppercase;   
+  font-weight: 700;
+  font-size: 1.7rem;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+}

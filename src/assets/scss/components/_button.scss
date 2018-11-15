@@ -1,0 +1,88 @@
+.btn {
+  &:link, &:visited {//Para que antes y despues del click sigan igual
+    text-transform: uppercase;
+    text-decoration: none;  
+    padding: 1.5rem 3rem;
+    display: inline-block;/*para que se comporte como bloque, pero solo tenga el tamaño de línea*/
+    transition: all .2s;  /*para que todas las animaciones dentro de la clase tengan una diracion de .2s*/
+    border-radius: 5rem;
+    position: relative;
+  }
+
+  &:hover {
+    transform: translateY(-.3rem); /*Para que se mueva para arriba 3px*/
+    box-shadow: 0 1rem 2rem $color-black-transparent; /*Para aplicar una sombra en el botón*/
+
+    &::after {
+      transform: scale(1.5); /* Para que crezca en un 50% */
+      opacity: 0; /*para que se haga invisible*/
+    }
+  }
+
+  &:active {
+    transform: translateY(-.1rem);
+    box-shadow: 0 .5rem 1rem $color-black-transparent;
+  }
+
+  &::after {
+    content: "";/*Es necesaria esta propiedad en pseudos*/
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    transition: all .35s;  
+    border-radius: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;/*Para que se demuestre por detrás*/
+  }
+
+  &--white {
+    color: $color-mediumgray;
+    background-color: white;
+  
+    &::after {
+      background-color: white;
+    }
+  }
+
+  &--green {
+    background-color: $color-mediumgreen;
+    color: $color-lightgray-1;
+
+    &::after {
+      background-color: $color-mediumgreen;
+    }
+  }
+  
+  &--animated {
+    animation: moveWhiteButton 1s ease .5s;
+    animation-fill-mode: backwards; /*Para que no se muestre el elemento hasta que se ejecute la animación*/
+  }
+
+}
+
+.btn-text {
+
+  &:link,
+  &:visited {
+    color: $color-mediumgreen;
+    display: inline-block;
+    padding: .4rem .5rem;
+    margin-top: 1rem;
+    text-decoration: none;
+    border-bottom: 1px solid $color-mediumgreen;
+    transition: all .2s;
+  }
+
+  &:hover {
+    color: white;
+    background-color: $color-mediumgreen;
+    box-shadow: -.2rem .4rem 1rem $color-black-transparent;
+  }
+
+  &:active {    
+    transform: translateY(.1rem);    
+    box-shadow: -.1rem .1rem 1rem $color-black-transparent;
+  }
+}

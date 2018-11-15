@@ -1,0 +1,9 @@
+/*Usamos esto para que el elemento que es float 
+se respete como si no fuera flotante*/
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
