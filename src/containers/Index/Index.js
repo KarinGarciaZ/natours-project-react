@@ -5,6 +5,7 @@ import Features from '../../components/Sections/Features';
 import Tours from '../../components/Sections/Tours';
 import Stories from '../../components/Sections/Stories';
 import Book from '../../components/Sections/Book';
+import Footer from '../../components/Layouts/Footer/Footer';
 
 class Index extends Component {
   render() {
@@ -17,6 +18,7 @@ class Index extends Component {
           <Tours />
           <Stories />
           <Book />
+          <Footer />
         </main>
       </div>
     );
